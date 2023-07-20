@@ -951,6 +951,59 @@
             "rid": "win"
           }
         }
+      },
+      "HouseRentingSystem.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/HouseRentingSystem.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HouseRentingSystem.Common.dll": {}
+        }
+      },
+      "HouseRentingSystem.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "HouseRentingSystem.Common": "1.0.0",
+          "HouseRentingSystem.Data.Models": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/HouseRentingSystem.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HouseRentingSystem.Data.dll": {}
+        }
+      },
+      "HouseRentingSystem.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "HouseRentingSystem.Common": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/HouseRentingSystem.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HouseRentingSystem.Data.Models.dll": {}
+        }
+      },
+      "HouseRentingSystem.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "HouseRentingSystem.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/HouseRentingSystem.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/HouseRentingSystem.Web.ViewModels.dll": {}
+        }
       }
     }
   },
@@ -2442,10 +2495,34 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "HouseRentingSystem.Common/1.0.0": {
+      "type": "project",
+      "path": "../HouseRenting/HouseRentingSystem.Common.csproj",
+      "msbuildProject": "../HouseRenting/HouseRentingSystem.Common.csproj"
+    },
+    "HouseRentingSystem.Data/1.0.0": {
+      "type": "project",
+      "path": "../HouseRentings/HouseRentingSystem.Data.csproj",
+      "msbuildProject": "../HouseRentings/HouseRentingSystem.Data.csproj"
+    },
+    "HouseRentingSystem.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../HouseRentingSys/HouseRentingSystem.Data.Models.csproj",
+      "msbuildProject": "../HouseRentingSys/HouseRentingSystem.Data.Models.csproj"
+    },
+    "HouseRentingSystem.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../HouseRentingSY/HouseRentingSystem.Web.ViewModels.csproj",
+      "msbuildProject": "../HouseRentingSY/HouseRentingSystem.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "HouseRentingSystem.Common >= 1.0.0",
+      "HouseRentingSystem.Data >= 1.0.0",
+      "HouseRentingSystem.Data.Models >= 1.0.0",
+      "HouseRentingSystem.Web.ViewModels >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.15",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.15",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.15",
@@ -2480,7 +2557,20 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ricky\\source\\repos\\ASP.NET-Advanced-June\\02.Workshop Project Fundamentals\\CSharpWebAdvanced-CourceProject-June2023\\HouseRentingSys\\HouseRentingSystem.Data.Models.csproj": {
+              "projectPath": "C:\\Users\\ricky\\source\\repos\\ASP.NET-Advanced-June\\02.Workshop Project Fundamentals\\CSharpWebAdvanced-CourceProject-June2023\\HouseRentingSys\\HouseRentingSystem.Data.Models.csproj"
+            },
+            "C:\\Users\\ricky\\source\\repos\\ASP.NET-Advanced-June\\02.Workshop Project Fundamentals\\CSharpWebAdvanced-CourceProject-June2023\\HouseRentingSY\\HouseRentingSystem.Web.ViewModels.csproj": {
+              "projectPath": "C:\\Users\\ricky\\source\\repos\\ASP.NET-Advanced-June\\02.Workshop Project Fundamentals\\CSharpWebAdvanced-CourceProject-June2023\\HouseRentingSY\\HouseRentingSystem.Web.ViewModels.csproj"
+            },
+            "C:\\Users\\ricky\\source\\repos\\ASP.NET-Advanced-June\\02.Workshop Project Fundamentals\\CSharpWebAdvanced-CourceProject-June2023\\HouseRentings\\HouseRentingSystem.Data.csproj": {
+              "projectPath": "C:\\Users\\ricky\\source\\repos\\ASP.NET-Advanced-June\\02.Workshop Project Fundamentals\\CSharpWebAdvanced-CourceProject-June2023\\HouseRentings\\HouseRentingSystem.Data.csproj"
+            },
+            "C:\\Users\\ricky\\source\\repos\\ASP.NET-Advanced-June\\02.Workshop Project Fundamentals\\CSharpWebAdvanced-CourceProject-June2023\\HouseRenting\\HouseRentingSystem.Common.csproj": {
+              "projectPath": "C:\\Users\\ricky\\source\\repos\\ASP.NET-Advanced-June\\02.Workshop Project Fundamentals\\CSharpWebAdvanced-CourceProject-June2023\\HouseRenting\\HouseRentingSystem.Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

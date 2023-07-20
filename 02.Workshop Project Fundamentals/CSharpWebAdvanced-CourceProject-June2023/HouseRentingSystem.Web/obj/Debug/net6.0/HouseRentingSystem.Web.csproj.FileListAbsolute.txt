@@ -55,7 +55,6 @@ C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamenta
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\HouseRentingSystem.Web.AssemblyInfoInputs.cache
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\HouseRentingSystem.Web.AssemblyInfo.cs
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\HouseRentingSystem.Web.csproj.CoreCompileInputs.cache
-C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\HouseRentingSystem.Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\HouseRentingSystem.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\HouseRentingSystem.Web.RazorAssemblyInfo.cache
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\HouseRentingSystem.Web.RazorAssemblyInfo.cs
@@ -75,3 +74,10 @@ C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamenta
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\HouseRentingSystem.Web.pdb
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\HouseRentingSystem.Web.genruntimeconfig.cache
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\ref\HouseRentingSystem.Web.dll
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Common.dll
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Common.pdb
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Data.dll
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Data.pdb
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Web.ViewModels.dll
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Web.ViewModels.pdb
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\obj\Debug\net6.0\HouseRentingSystem.Web.MvcApplicationPartsAssemblyInfo.cs
