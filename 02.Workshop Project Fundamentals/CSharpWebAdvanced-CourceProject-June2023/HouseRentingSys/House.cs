@@ -33,6 +33,7 @@ namespace HouseRentingSystem.Data.Models
         public Guid AgentId { get; set; }
         public virtual Agent Agent { get; set; } = null!;
 
-
+        public Guid? RenterId{ get; set; }
+        public virtual ApplicationUser? Renter { get; set; }
     }
 }

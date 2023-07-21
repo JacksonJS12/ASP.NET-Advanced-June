@@ -10,6 +10,7 @@
         "dependencies": {
           "HouseRentingSystem.Common": "1.0.0",
           "HouseRentingSystem.Data": "1.0.0",
+          "HouseRentingSystem.Data.Models": "1.0.0",
           "HouseRentingSystem.Web.ViewModels": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15",
@@ -553,6 +554,8 @@
       },
       "HouseRentingSystem.Data/1.0.0": {
         "dependencies": {
+          "HouseRentingSystem.Common": "1.0.0",
+          "HouseRentingSystem.Data.Models": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15"
         },
@@ -560,7 +563,19 @@
           "HouseRentingSystem.Data.dll": {}
         }
       },
+      "HouseRentingSystem.Data.Models/1.0.0": {
+        "dependencies": {
+          "HouseRentingSystem.Common": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15"
+        },
+        "runtime": {
+          "HouseRentingSystem.Data.Models.dll": {}
+        }
+      },
       "HouseRentingSystem.Web.ViewModels/1.0.0": {
+        "dependencies": {
+          "HouseRentingSystem.Common": "1.0.0"
+        },
         "runtime": {
           "HouseRentingSystem.Web.ViewModels.dll": {}
         }
@@ -943,6 +958,11 @@
       "sha512": ""
     },
     "HouseRentingSystem.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HouseRentingSystem.Data.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,7 +1,14 @@
-﻿namespace HouseRentingSystem.Data.Models
+﻿
+namespace HouseRentingSystem.Data.Models
 {
-    public class ApplicationUser : 
-
+    using Microsoft.AspNetCore.Identity;
+    public class ApplicationUser : IdentityUser<Guid>
     {
+        public ApplicationUser()
+        {
+            this.RentedHouses = new HashSet<House>();
+        }
+
+        public virtual ICollection<House> RentedHouses { get; set; }
     }
 }
