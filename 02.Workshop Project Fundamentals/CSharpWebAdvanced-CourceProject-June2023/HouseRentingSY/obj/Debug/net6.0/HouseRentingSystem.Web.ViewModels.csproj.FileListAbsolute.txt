@@ -10,3 +10,6 @@ C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamenta
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSY\obj\Debug\net6.0\refint\HouseRentingSystem.Web.ViewModels.dll
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSY\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.pdb
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSY\obj\Debug\net6.0\ref\HouseRentingSystem.Web.ViewModels.dll
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSY\bin\Debug\net6.0\HouseRentingSystem.Common.dll
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSY\bin\Debug\net6.0\HouseRentingSystem.Common.pdb
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSY\obj\Debug\net6.0\HouseRentingSystem.Web.ViewModels.csproj.CopyComplete

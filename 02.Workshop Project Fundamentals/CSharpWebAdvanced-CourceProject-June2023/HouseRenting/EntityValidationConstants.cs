@@ -25,9 +25,16 @@ namespace HouseRentingSystem.Common
             public const int DescriptionMinLength = 50;
             public const int DescriptionMaxLength = 500;
 
+            public const int ImageUrlMaxLength = 2048;
 
-            public const int ImageUrlMinLength = 10;
-            public const int ImageUrlMaxLength = 50;
+            public const string PricePerMonthMinValue = "0";
+            public const string PricePerMonthMaxValue = "2000";
+        }
+
+        public static class Agent
+        {
+            public const int PhoneNumberMinLength = 7;
+            public const int PhoneNumberMaxLength = 15;
         }
     }
 }
