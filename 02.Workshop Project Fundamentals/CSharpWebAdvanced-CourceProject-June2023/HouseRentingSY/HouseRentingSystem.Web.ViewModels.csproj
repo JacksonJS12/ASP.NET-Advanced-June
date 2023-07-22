@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HouseRentingSys\HouseRentingSystem.Data.Models.csproj" />
     <ProjectReference Include="..\HouseRenting\HouseRentingSystem.Common.csproj" />
   </ItemGroup>
 

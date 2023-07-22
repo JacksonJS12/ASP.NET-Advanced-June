@@ -1,9 +1,7 @@
-﻿
-using System.Reflection;
-using Microsoft.AspNetCore.Identity;
-
-namespace HouseRentingSystem.Data
+﻿namespace HouseRentingSystem.Data
 {
+    using System.Reflection;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
 

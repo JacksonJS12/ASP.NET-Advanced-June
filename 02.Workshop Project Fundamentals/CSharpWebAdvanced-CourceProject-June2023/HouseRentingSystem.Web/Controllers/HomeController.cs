@@ -1,23 +1,30 @@
-﻿namespace HouseRentingSystem.Web.Controllers
-{
-    using Microsoft.AspNetCore.Mvc;
+﻿
+using HouseRentingSystem.Web.ViewModels.Home;
 
+namespace HouseRentingSystem.Web.Controllers
+{
     using System.Diagnostics;
 
+    using Microsoft.AspNetCore.Mvc;
+
+    using Services.Data.Interfaces;
     using Models;
 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IHouseService houseService;
 
-        public HomeController()
+        public HomeController(IHouseService houseService)
         {
-            
+            this.houseService = houseService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            IEnumerable<IndexViewModel> viewModel =
+                await this.houseService.LastThreeHousesAsync();
+
+            return View(viewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
