@@ -16,10 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\HouseRentingSystem.Web.Infrastructure.csproj" />
     <ProjectReference Include="..\HouseRentingSys\HouseRentingSystem.Data.Models.csproj" />
     <ProjectReference Include="..\HouseRentingSY\HouseRentingSystem.Web.ViewModels.csproj" />
     <ProjectReference Include="..\HouseRentings\HouseRentingSystem.Data.csproj" />
     <ProjectReference Include="..\HouseRenting\HouseRentingSystem.Common.csproj" />
+    <ProjectReference Include="..\HouseRentin\HouseRentingSystem.Services.Data.csproj" />
   </ItemGroup>
 
 </Project>

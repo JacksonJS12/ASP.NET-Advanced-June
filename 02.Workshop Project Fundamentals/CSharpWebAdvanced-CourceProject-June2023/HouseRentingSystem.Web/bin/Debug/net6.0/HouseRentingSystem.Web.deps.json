@@ -11,6 +11,8 @@
           "HouseRentingSystem.Common": "1.0.0",
           "HouseRentingSystem.Data": "1.0.0",
           "HouseRentingSystem.Data.Models": "1.0.0",
+          "HouseRentingSystem.Services.Data": "1.0.0",
+          "HouseRentingSystem.Web.Infrastructure": "1.0.0",
           "HouseRentingSystem.Web.ViewModels": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15",
@@ -572,9 +574,30 @@
           "HouseRentingSystem.Data.Models.dll": {}
         }
       },
+      "HouseRentingSystem.Services.Data/1.0.0": {
+        "dependencies": {
+          "HouseRentingSystem.Common": "1.0.0",
+          "HouseRentingSystem.Data": "1.0.0",
+          "HouseRentingSystem.Data.Models": "1.0.0",
+          "HouseRentingSystem.Web.ViewModels": "1.0.0"
+        },
+        "runtime": {
+          "HouseRentingSystem.Services.Data.dll": {}
+        }
+      },
+      "HouseRentingSystem.Web.Infrastructure/1.0.0": {
+        "dependencies": {
+          "HouseRentingSystem.Services.Data": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0"
+        },
+        "runtime": {
+          "HouseRentingSystem.Web.Infrastructure.dll": {}
+        }
+      },
       "HouseRentingSystem.Web.ViewModels/1.0.0": {
         "dependencies": {
-          "HouseRentingSystem.Common": "1.0.0"
+          "HouseRentingSystem.Common": "1.0.0",
+          "HouseRentingSystem.Data.Models": "1.0.0"
         },
         "runtime": {
           "HouseRentingSystem.Web.ViewModels.dll": {}
@@ -963,6 +986,16 @@
       "sha512": ""
     },
     "HouseRentingSystem.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HouseRentingSystem.Services.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HouseRentingSystem.Web.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

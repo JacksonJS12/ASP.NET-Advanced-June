@@ -15,7 +15,7 @@ namespace HouseRentingSystem.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(NameMinLength)]
+        [MaxLength(NameMaxLength)]
         public string Name { get; set; } = null!;
 
         public virtual ICollection<House> Houses { get; set; }

@@ -84,3 +84,7 @@ C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamenta
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Data.Models.dll
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Data.Models.pdb
 C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\appsettings.Production.json
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Services.Data.dll
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Services.Data.pdb
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Web.Infrastructure.dll
+C:\Users\ricky\source\repos\ASP.NET-Advanced-June\02.Workshop Project Fundamentals\CSharpWebAdvanced-CourceProject-June2023\HouseRentingSystem.Web\bin\Debug\net6.0\HouseRentingSystem.Web.Infrastructure.pdb
