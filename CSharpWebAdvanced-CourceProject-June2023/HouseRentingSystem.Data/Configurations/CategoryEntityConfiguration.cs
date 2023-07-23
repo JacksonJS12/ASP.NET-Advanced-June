@@ -14,9 +14,10 @@
 
         private Category[] GenerateCategories()
         {
-            ICollection<Category>categories = new HashSet<Category>();
+            ICollection<Category> categories = new HashSet<Category>();
 
             Category category;
+
             category = new Category()
             {
                 Id = 1,

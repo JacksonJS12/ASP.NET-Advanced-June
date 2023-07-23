@@ -1,14 +1,11 @@
-﻿
-using HouseRentingSystem.Web.ViewModels.Home;
-
-namespace HouseRentingSystem.Web.Controllers
+﻿namespace HouseRentingSystem.Web.Controllers
 {
     using System.Diagnostics;
 
     using Microsoft.AspNetCore.Mvc;
 
     using Services.Data.Interfaces;
-    using Models;
+    using ViewModels.Home;
 
     public class HomeController : Controller
     {

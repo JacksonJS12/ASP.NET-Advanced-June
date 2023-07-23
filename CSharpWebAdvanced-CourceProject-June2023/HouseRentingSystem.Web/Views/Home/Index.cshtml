@@ -11,7 +11,7 @@
     <div class="mt-4 p-5 bg-light">
         <h1 class="display-4">Welcome to the best place for renting houses!</h1>
         <p class="lead">
-            There are no houses in the system currently available 
+            There are no houses in the system currently available
             so why don't you just add one?
         </p>
         <hr class="my-4">
@@ -19,13 +19,14 @@
             @if (User.Identity?.IsAuthenticated ?? false)
             {
                 <a asp-controller="House" asp-action="Add" class="btn btn-primary btn-lg"
-                   role="button">Add House</a>
+           role="button">Add House</a>
             }
         </p>
     </div>
 }
 
 <div class="mb-5"></div>
+
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         @for (int i = 0; i < houses.Count(); i++)
@@ -33,21 +34,21 @@
             var house = houses[i];
             <div class="carousel-item @(i == 0 ? "active" : string.Empty)">
                 <img class="d-block w-100" style="height:500px"
-                     src="@house.ImageUrl" alt="@house.Title">
+                 src="@house.ImageUrl" alt="@house.Title">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>
-                        <a class="btn btn-primary" asp-controller="House" aspaction="Details"
-                           asp-route-id="@house.Id"> @house.Title</a>
+                        <a class="btn btn-primary" asp-controller="House" asp-action="Details"
+                       asp-route-id="@house.Id"> @house.Title</a>
                     </h5>
                 </div>
             </div>
         }
     </div>
-    <button class="carousel-control-prev" type="button" data-bstarget="#carouselExampleControls" data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bstarget="#carouselExampleControls" data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>

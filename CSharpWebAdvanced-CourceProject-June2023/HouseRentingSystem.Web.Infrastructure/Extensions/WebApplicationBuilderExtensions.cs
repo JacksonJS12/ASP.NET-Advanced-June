@@ -1,19 +1,18 @@
 ﻿namespace HouseRentingSystem.Web.Infrastructure.Extensions
 {
     using System.Reflection;
-    using HouseRentingSystem.Services.Data;
-    using HouseRentingSystem.Services.Data.Interfaces;
+
     using Microsoft.Extensions.DependencyInjection;
+
     public static class WebApplicationBuilderExtensions
     {
         /// <summary>
         /// This method registers all services with their interfaces and implementations of given assembly.
-        /// The assembly is taken from the type of random service implementation provided.
+        /// The assembly is taken from the type of random service interface or implementation provided.
         /// </summary>
-        /// <param name="services"></param>
         /// <param name="serviceType"></param>
         /// <exception cref="InvalidOperationException"></exception>
-        public static void AddAplicationServices(this IServiceCollection services, Type serviceType)
+        public static void AddApplicationServices(this IServiceCollection services, Type serviceType)
         {
             Assembly? serviceAssembly = Assembly.GetAssembly(serviceType);
             if (serviceAssembly == null)

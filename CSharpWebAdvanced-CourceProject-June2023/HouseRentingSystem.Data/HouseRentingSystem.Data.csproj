@@ -7,17 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.15" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.15">
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\HouseRentingSys\HouseRentingSystem.Data.Models.csproj" />
-    <ProjectReference Include="..\HouseRenting\HouseRentingSystem.Common.csproj" />
+    <ProjectReference Include="..\HouseRentingSystem.Common\HouseRentingSystem.Common.csproj" />
+    <ProjectReference Include="..\HouseRentingSystem.Data.Models\HouseRentingSystem.Data.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>

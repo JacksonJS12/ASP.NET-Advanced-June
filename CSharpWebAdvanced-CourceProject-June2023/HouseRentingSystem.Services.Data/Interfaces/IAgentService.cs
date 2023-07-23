@@ -1,13 +1,15 @@
-﻿namespace HouseRentingSystem.Services.Data.Interfaces;
-
-using Web.ViewModels.Agent;
-public interface IAgentService
+﻿namespace HouseRentingSystem.Services.Data.Interfaces
 {
-    Task<bool> AgentExistByUserIdAsync(string userId);
+    using Web.ViewModels.Agent;
 
-    Task<bool> AgentExistsByPhoneNumberAsync(string phoneNumber);
+    public interface IAgentService
+    {
+        Task<bool> AgentExistsByUserIdAsync(string userId);
 
-    Task<bool> HasRentsByUserIdAsync(string userId);
+        Task<bool> AgentExistsByPhoneNumberAsync(string phoneNumber);
 
-    Task Create(string userId, BecomeAgentFormModel model);
+        Task<bool> HasRentsByUserIdAsync(string userId);
+
+        Task Create(string userId, BecomeAgentFormModel model);
+    }
 }

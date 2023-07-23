@@ -3,6 +3,7 @@
     using System.ComponentModel.DataAnnotations;
 
     using static Common.EntityValidationConstants.Agent;
+
     public class BecomeAgentFormModel
     {
         [Required]

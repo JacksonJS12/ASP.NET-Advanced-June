@@ -5,6 +5,7 @@
     using HouseRentingSystem.Data;
     using Interfaces;
     using Web.ViewModels.Home;
+
     public class HouseService : IHouseService
     {
         private readonly HouseRentingDbContext dbContext;

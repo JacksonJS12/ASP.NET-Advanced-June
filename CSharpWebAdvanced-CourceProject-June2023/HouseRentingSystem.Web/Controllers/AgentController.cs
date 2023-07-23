@@ -1,14 +1,11 @@
-﻿
-
-using HouseRentingSystem.Web.ViewModels.Agent;
-
-namespace HouseRentingSystem.Web.Controllers
+﻿namespace HouseRentingSystem.Web.Controllers
 {
-    using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
 
-    using HouseRentingSystem.Services.Data.Interfaces;
     using Infrastructure.Extensions;
+    using Services.Data.Interfaces;
+    using ViewModels.Agent;
 
     using static Common.NotificationMessagesConstants;
 
@@ -21,11 +18,12 @@ namespace HouseRentingSystem.Web.Controllers
         {
             this.agentService = agentService;
         }
+
         [HttpGet]
         public async Task<IActionResult> Become()
         {
             string? userId = this.User.GetId();
-            bool isAgent = await this.agentService.AgentExistByUserIdAsync(userId);
+            bool isAgent = await this.agentService.AgentExistsByUserIdAsync(userId);
             if (isAgent)
             {
                 this.TempData[ErrorMessage] = "You are already an agent!";
@@ -40,7 +38,7 @@ namespace HouseRentingSystem.Web.Controllers
         public async Task<IActionResult> Become(BecomeAgentFormModel model)
         {
             string? userId = this.User.GetId();
-            bool isAgent = await this.agentService.AgentExistByUserIdAsync(userId);
+            bool isAgent = await this.agentService.AgentExistsByUserIdAsync(userId);
             if (isAgent)
             {
                 this.TempData[ErrorMessage] = "You are already an agent!";
@@ -52,7 +50,7 @@ namespace HouseRentingSystem.Web.Controllers
                 await this.agentService.AgentExistsByPhoneNumberAsync(model.PhoneNumber);
             if (isPhoneNumberTaken)
             {
-                ModelState.AddModelError(nameof(model.PhoneNumber), "Agent with the provided phone number already exist!");
+                this.ModelState.AddModelError(nameof(model.PhoneNumber), "Agent with the provided phone number already exists!");
             }
 
             if (!this.ModelState.IsValid)
@@ -76,7 +74,8 @@ namespace HouseRentingSystem.Web.Controllers
             catch (Exception)
             {
                 this.TempData[ErrorMessage] =
-                    "Unexpected error occurred while registering you as an agent! Please try again later or contact administration.";
+                    "Unexpected error occurred while registering you as an agent! Please try again later or contact administrator.";
+
                 return this.RedirectToAction("Index", "Home");
             }
 

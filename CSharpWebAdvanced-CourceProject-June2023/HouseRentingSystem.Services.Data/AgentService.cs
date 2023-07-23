@@ -1,12 +1,12 @@
-﻿using HouseRentingSystem.Data.Models;
-using HouseRentingSystem.Web.ViewModels.Agent;
-
-namespace HouseRentingSystem.Services.Data
+﻿namespace HouseRentingSystem.Services.Data
 {
-    using Interfaces;
+    using Microsoft.EntityFrameworkCore;
 
     using HouseRentingSystem.Data;
-    using Microsoft.EntityFrameworkCore;
+    using HouseRentingSystem.Data.Models;
+    using Interfaces;
+    using Web.ViewModels.Agent;
+
     public class AgentService : IAgentService
     {
         private readonly HouseRentingDbContext dbContext;
@@ -15,7 +15,8 @@ namespace HouseRentingSystem.Services.Data
         {
             this.dbContext = dbContext;
         }
-        public async Task<bool> AgentExistByUserIdAsync(string userId)
+
+        public async Task<bool> AgentExistsByUserIdAsync(string userId)
         {
             bool result = await this.dbContext
                 .Agents
@@ -38,11 +39,11 @@ namespace HouseRentingSystem.Services.Data
             ApplicationUser? user = await this.dbContext
                 .Users
                 .FirstOrDefaultAsync(u => u.Id.ToString() == userId);
-
             if (user == null)
             {
                 return false;
             }
+
             return user.RentedHouses.Any();
         }
 
