@@ -3,4 +3,7 @@
 /.vs
 /bin
 /obj
-/.vs
+.vs
+.gitignore
+bin 
+obj
