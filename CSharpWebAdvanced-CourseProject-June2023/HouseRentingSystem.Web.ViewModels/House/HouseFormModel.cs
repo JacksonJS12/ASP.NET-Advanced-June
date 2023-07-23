@@ -28,7 +28,7 @@ namespace HouseRentingSystem.Web.ViewModels.House
         [Display(Name = "Image Link")]
         public string ImageUrl { get; set; } = null!;
 
-        [Range(typeof(decimal), PricePerMonthMaxValue, PricePerMonthMinValue)]
+        [Range(typeof(decimal), PricePerMonthMinValue, PricePerMonthMaxValue)]
         [Display(Name = "Monthly Price")]
         public decimal PricePerMonth { get; set; }
 
