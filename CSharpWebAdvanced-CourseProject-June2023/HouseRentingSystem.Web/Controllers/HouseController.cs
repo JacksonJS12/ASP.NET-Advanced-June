@@ -44,5 +44,20 @@
 
             return View(formModel);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Add(HouseFormModel model)
+        {
+            bool isAgent = await this.agentService.AgentExistsByUserIdAsync(this.User.GetId()!);
+            if (!isAgent)
+            {
+                this.TempData[ErrorMessage] = "You must become an agent in order to add new houses!";
+
+                return this.RedirectToAction("Become", "Agent");
+            }
+
+            bool categoryExist = 
+                await this.categoryService
+        }
     }
 }
