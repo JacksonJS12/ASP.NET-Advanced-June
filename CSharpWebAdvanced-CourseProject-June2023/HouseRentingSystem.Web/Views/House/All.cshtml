@@ -21,6 +21,16 @@
                     }
                 </select>
             </div>
+
+            <div class="form-group">
+                <label asp-for="HousesPerPage"></label>
+                <select asp-for="HousesPerPage" class="form-control">
+                    <option value="">All</option>
+                    <option value="3">3</option>
+                    <option value="6">6</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
         </div>
 
         <div class="form-group col-md-3">
@@ -50,22 +60,33 @@
 </form>
 
 @{
-    int previousPage = Model.CurrentPage - 1; 
+    int previousPage = Model.CurrentPage - 1;
     if (previousPage < 1)
     {
         previousPage = 1;
     }
-    int maxPage = (int) Math.Ceiling((double)Model.TotalHouses /
+    int maxPage = (int)Math.Ceiling((double)Model.TotalHouses /
         Model.HousesPerPage);
 }
+@if (!Model.Houses.Any())
+{
+    <h2 class="text-center">No houses found by the given criteria!</h2>
+}
+
+<div class="row">
+    @foreach (var house in Model.Houses)
+    {
+        <partial name="_HousePartial" model="@house" />
+    }
+</div>
 
 <div class="row mb-5">
     <div class="col-md-6 d-grid gap-2 d-md-flex justify-content-md-start">
         <a class="btn btn-primary @(Model.CurrentPage == 1 ? "disabled" : string.Empty)"
-           asp-controller="House" 
+           asp-controller="House"
            asp-action="All"
-           asp-route-currentPage="@previousPage" 
-           asp-route-category="@Model.Category" 
+           asp-route-currentPage="@previousPage"
+           asp-route-category="@Model.Category"
            asp-route-searchTerm="@Model.SearchString"
            asp-route-sorting="@((int)Model.HouseSorting)"><<</a>
     </div>
@@ -78,18 +99,7 @@
            @(shouldButtonBeDisabled ? "disabled" : string.Empty)" asp-controller="House" asp-action="All"
            asp-route-currentPage="@(Model.CurrentPage + 1)"
            asp-route-category="@Model.Category" asp-route-searchTerm="@Model.SearchString"
-           asp-route-sorting="@((int)Model.Sorting)">>></a>
+           asp-route-sorting="@((int)Model.HouseSorting)">>></a>
     </div>
 </div>
 
-@if (!Model.Houses.Any())
-{
-    <h2 class="text-center">No houses found by the given criteria!</h2>
-}
-
-<div class="row">
-    @foreach (var house in Model.Houses)
-    {
-        <partial name="_HousePartial" model="@house" />
-    }
-</div>
