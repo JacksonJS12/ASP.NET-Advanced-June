@@ -164,7 +164,7 @@ namespace HouseRentingSystem.Data.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 6, 23, 17, 29, 37, 294, DateTimeKind.Utc).AddTicks(7920));
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -200,7 +200,7 @@ namespace HouseRentingSystem.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("34c0d15d-05d8-49d0-9be3-bc2cb7454f5e"),
+                            Id = new Guid("04752da7-733a-42ab-923d-840f56e668b4"),
                             Address = "North London, UK (near the border)",
                             AgentId = new Guid("f5086448-a741-4b80-b0c7-0263eb4e3ae9"),
                             CategoryId = 3,
@@ -213,7 +213,7 @@ namespace HouseRentingSystem.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("85369667-9471-4861-a5e2-5421820cf84a"),
+                            Id = new Guid("e29dda5f-24f0-4f5d-9f74-2d895075e210"),
                             Address = "Near the Sea Garden in Burgas, Bulgaria",
                             AgentId = new Guid("f5086448-a741-4b80-b0c7-0263eb4e3ae9"),
                             CategoryId = 2,
@@ -225,7 +225,7 @@ namespace HouseRentingSystem.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("905eac47-6348-465f-a7cd-892ce8092380"),
+                            Id = new Guid("4f71866b-1cbe-4789-97f1-77e12eb2454e"),
                             Address = "Boyana Neighbourhood, Sofia, Bulgaria",
                             AgentId = new Guid("f5086448-a741-4b80-b0c7-0263eb4e3ae9"),
                             CategoryId = 2,
