@@ -4,6 +4,7 @@ using HouseRentingSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HouseRentingSystem.Data.Migrations
 {
     [DbContext(typeof(HouseRentingDbContext))]
-    partial class HouseRentingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230731021154_check")]
+    partial class check
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -200,7 +202,7 @@ namespace HouseRentingSystem.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e3332185-eaf1-43f7-8ebd-fc7bc6d19596"),
+                            Id = new Guid("5cb01820-8f62-4b6e-a2cb-3e068320af7d"),
                             Address = "North London, UK (near the border)",
                             AgentId = new Guid("f5086448-a741-4b80-b0c7-0263eb4e3ae9"),
                             CategoryId = 3,
@@ -213,7 +215,7 @@ namespace HouseRentingSystem.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0e226a47-82f9-4ab4-95c6-9e89739dc018"),
+                            Id = new Guid("24a487ff-a773-4b82-a062-23db666754ff"),
                             Address = "Near the Sea Garden in Burgas, Bulgaria",
                             AgentId = new Guid("f5086448-a741-4b80-b0c7-0263eb4e3ae9"),
                             CategoryId = 2,
@@ -225,7 +227,7 @@ namespace HouseRentingSystem.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ed9f09dc-295a-4b1e-9cbd-5412d6632a65"),
+                            Id = new Guid("8ad0b16a-f642-4b64-af95-4fd6064280f5"),
                             Address = "Boyana Neighbourhood, Sofia, Bulgaria",
                             AgentId = new Guid("f5086448-a741-4b80-b0c7-0263eb4e3ae9"),
                             CategoryId = 2,
