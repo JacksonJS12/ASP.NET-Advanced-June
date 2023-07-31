@@ -119,7 +119,7 @@
         {
             IEnumerable<HouseAllViewModel> allAgentHouses = await this.dbContext
                 .Houses
-                .Where(h => h.AgentId.ToString() == agentId)
+                .Where(h => h.IsActive && h.AgentId.ToString() == agentId)
                 .Select(h => new HouseAllViewModel
                 {
                     Id = h.Id.ToString(),
@@ -138,7 +138,9 @@
         {
             IEnumerable<HouseAllViewModel> allUserHouses = await this.dbContext
                 .Houses
-                .Where(h => h.AgentId.ToString() == userId)
+                    .Where(h => h.IsActive &&
+                                     h.RenterId.ToString() == userId &&
+                                 h.RenterId.HasValue)
                 .Select(h => new HouseAllViewModel
                 {
                     Id = h.Id.ToString(),

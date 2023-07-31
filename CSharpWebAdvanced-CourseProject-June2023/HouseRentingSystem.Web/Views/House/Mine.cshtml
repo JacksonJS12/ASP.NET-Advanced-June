@@ -4,7 +4,7 @@
 }
 
 <h2 class="text-center">@ViewData["Title"]</h2>
-<hr/>
+<hr />
 
 @if (!Model.Any())
 {
@@ -15,7 +15,7 @@ else
     <div class="row">
         @foreach (HouseAllViewModel house in Model)
         {
-            <partial name="_HousePartial" model="house"/>
+            <partial name="_HousePartial" model="house" />
         }
     </div>
 }

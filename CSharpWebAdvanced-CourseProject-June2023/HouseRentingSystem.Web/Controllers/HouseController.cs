@@ -94,7 +94,7 @@
         }
 
         [HttpGet]
-        public async Task<IActionResult> Mine()
+        public async Task<IActionResult> Mine(HouseFormModel model)
         {
             List<HouseAllViewModel> myHouses =
                 new List<HouseAllViewModel>();
