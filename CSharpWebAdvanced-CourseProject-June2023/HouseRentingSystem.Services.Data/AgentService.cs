@@ -59,7 +59,7 @@
             await this.dbContext.SaveChangesAsync();
         }
 
-        public async Task<string?> AgentIdByUserIdAsync(string userId)
+        public async Task<string?> GetAgentIdByUserIdAsync(string userId)
         {
             Agent? agent = await this.dbContext
                 .Agents
