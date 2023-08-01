@@ -32,6 +32,7 @@
 
         public decimal PricePerMonth { get; set; }
 
+        public bool IsActive { get; set; }
         public DateTime CreatedOn { get; set; }
 
         public int CategoryId { get; set; }
