@@ -29,7 +29,7 @@ namespace HouseRentingSystem.Web.Controllers
 
         [HttpGet]
         [AllowAnonymous]
-        public async Task<IActionResult> All([FromQuery]AllHousesQueryModel queryModel)
+        public async Task<IActionResult> All([FromQuery] AllHousesQueryModel queryModel)
         {
             AllHousesFilteredAndPagedServiceModel serviceModel =
                 await this.houseService.AllAsync(queryModel);
@@ -93,17 +93,20 @@ namespace HouseRentingSystem.Web.Controllers
             {
                 string? agentId =
                     await this.agentService.GetAgentIdByUserIdAsync(this.User.GetId()!);
-                await this.houseService.CreateAsync(model, agentId!);
+                string houseId = 
+                    await this.houseService.CreateAndReturnIdAsync(model, agentId!);
+
+                return this.RedirectToAction("Details", "House", new { id = houseId });
             }
             catch (Exception)
             {
-                this.ModelState.AddModelError(string.Empty, 
+                this.ModelState.AddModelError(string.Empty,
                     "Unexpected error occurred while trying to add your new house! Please try again later or contact administrator!");
                 model.Categories = await this.categoryService.AllCategoriesAsync();
 
                 return this.View(model);
             }
-            return this.RedirectToAction("All", "House");
+           
         }
 
         [HttpGet]
@@ -153,7 +156,7 @@ namespace HouseRentingSystem.Web.Controllers
                 return this.RedirectToAction("Become", "Agent");
             }
 
-            string? agentId = 
+            string? agentId =
                 await this.agentService.GetAgentIdByUserIdAsync(this.User.GetId()!);
             bool isAgentOwner = await this.houseService
                 .IsAgentWithIdOwnerOfHouseWithIdAsync(id, agentId!);
@@ -224,7 +227,7 @@ namespace HouseRentingSystem.Web.Controllers
             }
             catch (Exception)
             {
-                this.ModelState.AddModelError(string.Empty, 
+                this.ModelState.AddModelError(string.Empty,
                     "Unexpected error occurred while trying to update the house. PLease try again later or contact the administrator!");
                 model.Categories = await this.categoryService.AllCategoriesAsync();
 
