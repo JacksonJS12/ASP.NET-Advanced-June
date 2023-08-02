@@ -1,4 +1,6 @@
-﻿namespace HouseRentingSystem.Services.Data.Interfaces
+﻿using Microsoft.IdentityModel.Tokens;
+
+namespace HouseRentingSystem.Services.Data.Interfaces
 {
     using HouseRentingSystem.Service.Data.Models.House;
     using HouseRentingSystem.Web.ViewModels.House;
@@ -21,5 +23,9 @@
         Task<HouseDetailsViewModel?> GetDetailsByIdAsync(string houseId);
 
         Task<HouseFormModel> GetHouseForEditByIdAsync(string houseId);
+
+        Task<bool> IsAgentWithIdOwnerOfHouseWithIdAsync(string houseId, string agentId);
+
+        Task EditHouseByIdAndFormModel(string houseId, HouseFormModel formModel);
     }
 }
