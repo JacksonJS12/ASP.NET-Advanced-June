@@ -97,16 +97,25 @@
         [AllowAnonymous]
         public async Task<IActionResult> Details(string id)
         {
-            HouseDetailsViewModel? viwModel = await this.houseService
-                .GetDetailsByIdAsync(id);
-            if (viwModel == null)
+            bool houseExists = await this.houseService
+                .ExistsByIdAsync(id);
+            if (!houseExists)
             {
                 this.TempData[ErrorMessage] = "House with the provided id does not exist!";
 
                 return this.RedirectToAction("All", "House");
             }
+            HouseDetailsViewModel viwModel = await this.houseService
+                .GetDetailsByIdAsync(id);
+         
 
             return this.View(viwModel);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(string id)
+        {
+
         }
 
         [HttpGet]
