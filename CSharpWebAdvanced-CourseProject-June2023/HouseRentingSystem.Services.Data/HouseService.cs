@@ -1,4 +1,6 @@
-﻿namespace HouseRentingSystem.Services.Data
+﻿using HouseRentingSystem.Web.ViewModels.Agent;
+
+namespace HouseRentingSystem.Services.Data
 {
     using Microsoft.EntityFrameworkCore;
 
@@ -153,6 +155,39 @@
                 .ToArrayAsync();
 
             return allUserHouses;
+        }
+
+        public async Task<HouseDetailsViewModel?> GetDetailsByIdAsync(string houseId)
+        {
+            House? house = await this.dbContext
+                .Houses
+                .Include(h => h.Category)
+                .Include(h => h.Agent)
+                .ThenInclude(a => a.User)
+                .Where(h => h.IsActive)
+                .FirstAsync(h => h.Id.ToString() == houseId);
+
+            if (house == null)
+            {
+                return null;
+            }
+
+            return new HouseDetailsViewModel
+            {
+                Id = house.Id.ToString(),
+                Title = house.Title,
+                Address = house.Address,
+                ImageUrl = house.ImageUrl,
+                PricePerMonth = house.PricePerMonth,
+                IsRented = house.RenterId.HasValue,
+                Description = house.Description,
+                Category = house.Category.Name,
+                Agent = new AgentInfoOnHouseViewModel()
+                {
+                    Email = house.Agent.User.Email,
+                    PhoneNumber = house.Agent.PhoneNumber
+                }
+            };
         }
     }
 }

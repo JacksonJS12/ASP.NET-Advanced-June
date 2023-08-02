@@ -94,6 +94,22 @@
         }
 
         [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(string id)
+        {
+            HouseDetailsViewModel? viwModel = await this.houseService
+                .GetDetailsByIdAsync(id);
+            if (viwModel == null)
+            {
+                this.TempData[ErrorMessage] = "House with the provided id does not exist!";
+
+                return this.RedirectToAction("All", "House");
+            }
+
+            return this.View(viwModel);
+        }
+
+        [HttpGet]
         public async Task<IActionResult> Mine(HouseFormModel model)
         {
             List<HouseAllViewModel> myHouses =
