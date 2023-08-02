@@ -1,15 +1,19 @@
-﻿namespace HouseRentingSystem.Services.Data
+﻿
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+
+namespace HouseRentingSystem.Services.Data
 {
     using Microsoft.EntityFrameworkCore;
 
+    using Web.ViewModels.Agent;
     using HouseRentingSystem.Data;
     using Interfaces;
     using Web.ViewModels.Home;
-    using HouseRentingSystem.Web.ViewModels.House;
+    using Web.ViewModels.House;
     using HouseRentingSystem.Data.Models;
     using HouseRentingSystem.Service.Data.Models.House;
     using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-    using HouseRentingSystem.Web.ViewModels.House.Enums;
+    using Web.ViewModels.House.Enums;
 
     public class HouseService : IHouseService
     {
@@ -153,6 +157,63 @@
                 .ToArrayAsync();
 
             return allUserHouses;
+        }
+
+        public async Task<bool> ExistsByIdAsync(string houseId)
+        {
+            bool result = await this.dbContext
+                .Houses
+                .Where(h => h.IsActive)
+                .AnyAsync(h => h.Id.ToString() == houseId);
+
+            return result;
+        }
+
+        public async Task<HouseDetailsViewModel?> GetDetailsByIdAsync(string houseId)
+        {
+            House? house = await this.dbContext
+                .Houses
+                .Include(h => h.Category)
+                .Include(h => h.Agent)
+                .ThenInclude(a => a.User)
+                .Where(h => h.IsActive)
+                .FirstAsync(h => h.Id.ToString() == houseId);
+
+            return new HouseDetailsViewModel
+            {
+                Id = house.Id.ToString(),
+                Title = house.Title,
+                Address = house.Address,
+                ImageUrl = house.ImageUrl,
+                PricePerMonth = house.PricePerMonth,
+                IsRented = house.RenterId.HasValue,
+                Description = house.Description,
+                Category = house.Category.Name,
+                Agent = new AgentInfoOnHouseViewModel()
+                {
+                    Email = house.Agent.User.Email,
+                    PhoneNumber = house.Agent.PhoneNumber
+                }
+            };
+        }
+
+        public async Task<HouseFormModel> GetHouseForEditByIdAsync(string houseId)
+        {
+            House? house = await this.dbContext
+                .Houses
+                .Include(h => h.Category)
+                .Where(h => h.IsActive)
+                .FirstAsync(h => h.Id.ToString() == houseId);
+
+            return new HouseFormModel
+            {
+                Title = house.Title,
+                Address = house.Address,
+                Description = house.Description,
+                ImageUrl = house.ImageUrl,
+                PricePerMonth = house.PricePerMonth,
+                Categories = house.CategoryId,
+            }
         }
     }
 }
