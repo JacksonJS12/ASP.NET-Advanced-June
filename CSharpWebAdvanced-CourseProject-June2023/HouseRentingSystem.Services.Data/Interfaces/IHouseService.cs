@@ -1,4 +1,6 @@
-﻿namespace HouseRentingSystem.Services.Data.Interfaces
+﻿using Microsoft.IdentityModel.Tokens;
+
+namespace HouseRentingSystem.Services.Data.Interfaces
 {
     using HouseRentingSystem.Service.Data.Models.House;
     using HouseRentingSystem.Web.ViewModels.House;
@@ -8,7 +10,7 @@
     {
         Task<IEnumerable<IndexViewModel>> LastThreeHousesAsync();
 
-        Task CreateAsync(HouseFormModel formModel, string agentId);
+        Task<string> CreateAndReturnIdAsync(HouseFormModel formModel, string agentId);
 
         Task<AllHousesFilteredAndPagedServiceModel> AllAsync(AllHousesQueryModel queryModel);
 
@@ -21,5 +23,13 @@
         Task<HouseDetailsViewModel?> GetDetailsByIdAsync(string houseId);
 
         Task<HouseFormModel> GetHouseForEditByIdAsync(string houseId);
+
+        Task<bool> IsAgentWithIdOwnerOfHouseWithIdAsync(string houseId, string agentId);
+
+        Task EditHouseByIdAndFormModelAsync(string houseId, HouseFormModel formModel);
+
+        Task<HousePreDeleteDetailsViewModel> GetHouseForDeleteByIdAsync(string houseId);
+
+        Task DeleteHouseByIdAsync(string houseId);
     }
 }
