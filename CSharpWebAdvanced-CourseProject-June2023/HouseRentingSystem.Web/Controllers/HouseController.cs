@@ -11,7 +11,7 @@ namespace HouseRentingSystem.Web.Controllers
     using ViewModels.House;
 
     using static Common.NotificationMessagesConstants;
-    using HouseRentingSystem.Service.Data.Models.House;
+    using HouseRentingSystem.Services.Data.Models.House;
 
     [Authorize]
     public class HouseController : Controller

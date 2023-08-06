@@ -1,6 +1,6 @@
 ﻿using HouseRentingSystem.Web.ViewModels.House;
 
-namespace HouseRentingSystem.Service.Data.Models.House
+namespace HouseRentingSystem.Services.Data.Models.House
 {
     public class AllHousesFilteredAndPagedServiceModel
     {

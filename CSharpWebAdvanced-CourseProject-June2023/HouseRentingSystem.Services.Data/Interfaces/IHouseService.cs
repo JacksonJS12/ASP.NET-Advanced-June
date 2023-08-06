@@ -1,9 +1,8 @@
-﻿using Microsoft.IdentityModel.Tokens;
-
-namespace HouseRentingSystem.Services.Data.Interfaces
+﻿namespace HouseRentingSystem.Services.Data.Interfaces
 {
-    using HouseRentingSystem.Service.Data.Models.House;
-    using HouseRentingSystem.Web.ViewModels.House;
+    using HouseRentingSystem.Services.Data.Models.Statistics;
+    using Models.House;
+    using Web.ViewModels.House;
     using Web.ViewModels.Home;
 
     public interface IHouseService
@@ -36,5 +35,7 @@ namespace HouseRentingSystem.Services.Data.Interfaces
         Task RentHouseAsync(string houseId, string userId);
         Task<bool> IsRenterByUserWithIdAsync(string houseId, string userId);
         Task LeaveHouseAsync(string houseId);
+
+        Task<StatisticsServiceModel> GetStatisticsAsync();
     }
 }

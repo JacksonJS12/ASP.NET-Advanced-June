@@ -1,5 +1,6 @@
 ﻿
 using System.Security.Cryptography;
+using HouseRentingSystem.Services.Data.Models.Statistics;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace HouseRentingSystem.Services.Data
@@ -12,7 +13,7 @@ namespace HouseRentingSystem.Services.Data
     using Web.ViewModels.Home;
     using Web.ViewModels.House;
     using HouseRentingSystem.Data.Models;
-    using HouseRentingSystem.Service.Data.Models.House;
+    using HouseRentingSystem.Services.Data.Models.House;
     using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
     using Web.ViewModels.House.Enums;
 
@@ -311,6 +312,17 @@ namespace HouseRentingSystem.Services.Data
             house.RenterId = null;
 
             await this.dbContext.SaveChangesAsync();
+        }
+
+        public async Task<StatisticsServiceModel> GetStatisticsAsync()
+        {
+            return new StatisticsServiceModel()
+            {
+                TotalHouses = await this.dbContext.Houses.CountAsync(),
+                TotalRents = await this.dbContext.Houses
+                    .Where(h => h.RenterId.HasValue)
+                    .CountAsync()
+            };
         }
     }
 }

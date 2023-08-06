@@ -1,12 +1,13 @@
 namespace HouseRentingSystem.Web
 {
     using Microsoft.EntityFrameworkCore;
-    
+
     using Data;
     using Data.Models;
     using Infrastructure.Extensions;
+    using Infrastructure.ModelBinders;
     using Services.Data.Interfaces;
-    using HouseRentingSystem.Web.Infrastructure.ModelBinders;
+
 
     public class Program
     {
@@ -14,38 +15,38 @@ namespace HouseRentingSystem.Web
         {
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-            string connectionString = 
+            string connectionString =
                 builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            
+
             builder.Services.AddDbContext<HouseRentingDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
-                {
-                    options.SignIn.RequireConfirmedAccount =
-                        builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedAccount");
-                    options.Password.RequireLowercase = 
-                        builder.Configuration.GetValue<bool>("Identity:Password:RequireLowercase");
-                    options.Password.RequireUppercase =
-                        builder.Configuration.GetValue<bool>("Identity:Password:RequireUppercase");
-                    options.Password.RequireNonAlphanumeric =
-                        builder.Configuration.GetValue<bool>("Identity:Password:RequireNonAlphanumeric");
-                    options.Password.RequiredLength =
-                        builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
-                })
+            {
+                options.SignIn.RequireConfirmedAccount =
+                    builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedAccount");
+                options.Password.RequireLowercase =
+                    builder.Configuration.GetValue<bool>("Identity:Password:RequireLowercase");
+                options.Password.RequireUppercase =
+                    builder.Configuration.GetValue<bool>("Identity:Password:RequireUppercase");
+                options.Password.RequireNonAlphanumeric =
+                    builder.Configuration.GetValue<bool>("Identity:Password:RequireNonAlphanumeric");
+                options.Password.RequiredLength =
+                    builder.Configuration.GetValue<int>("Identity:Password:RequiredLength");
+            })
                 .AddEntityFrameworkStores<HouseRentingDbContext>();
 
             builder.Services.AddApplicationServices(typeof(IHouseService));
 
-            builder.Services.AddControllersWithViews()
+            builder.Services
+                .AddControllersWithViews()
                 .AddMvcOptions(options =>
                 {
                     options.ModelBinderProviders.Insert(0, new DecimalModelBinderProvider());
                 });
 
-
             WebApplication app = builder.Build();
-            
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
@@ -55,6 +56,7 @@ namespace HouseRentingSystem.Web
             {
                 app.UseExceptionHandler("/Home/Error/500");
                 app.UseStatusCodePagesWithRedirects("/Home/Error?statusCode={0}");
+
                 app.UseHsts();
             }
 
