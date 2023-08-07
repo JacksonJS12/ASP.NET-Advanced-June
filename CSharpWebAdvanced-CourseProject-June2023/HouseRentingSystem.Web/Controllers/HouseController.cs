@@ -373,7 +373,7 @@ namespace HouseRentingSystem.Web.Controllers
                 return this.RedirectToAction("All", "House");
             }
 
-            bool isHouseRented = await this.houseService.IsRentedByIdAsync(id);
+            bool isHouseRented = await this.houseService.IsRentedAsync(id);
             if (isHouseRented)
             {
                 this.TempData[ErrorMessage] = "Selected house is already rented by another user.Please select another house!";
@@ -411,7 +411,7 @@ namespace HouseRentingSystem.Web.Controllers
                 return this.RedirectToAction("All", "House");
             }
 
-            bool isHouseRented = await this.houseService.IsRentedByIdAsync(id);
+            bool isHouseRented = await this.houseService.IsRentedAsync(id);
             if (!isHouseRented)
             {
                 this.TempData[ErrorMessage] = "Selected house is not rented. Please select one of your houses if you wish to leave them!";
@@ -419,7 +419,7 @@ namespace HouseRentingSystem.Web.Controllers
             }
 
             bool isCurrentUserRenterOfTheHouse =
-                await this.houseService.IsRenterByUserWithIdAsync(id, this.User.GetId()!);
+                await this.houseService.IsRentedByUserWithIdAsync(id, this.User.GetId()!);
             if (!isCurrentUserRenterOfTheHouse)
             {
                 this.TempData[ErrorMessage] =
