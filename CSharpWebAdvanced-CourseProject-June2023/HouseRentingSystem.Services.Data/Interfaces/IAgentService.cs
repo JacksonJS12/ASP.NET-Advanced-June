@@ -12,6 +12,8 @@
 
         Task Create(string userId, BecomeAgentFormModel model);
 
-        Task<string?> AgentIdByUserIdAsync(string userId);
+        Task<string?> GetAgentIdByUserIdAsync(string userId);
+
+        Task<bool> HasHouseWithIdAsync(string úsertId, string houseId);
     }
 }
