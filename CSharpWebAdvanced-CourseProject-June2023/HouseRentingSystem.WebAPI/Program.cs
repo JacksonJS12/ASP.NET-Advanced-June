@@ -25,7 +25,7 @@ namespace HouseRentingSystem.WebAPI
 
             builder.Services.AddCors(setup =>
             {
-                setup.AddPolicy("HouseRentingSystemDev", policyBuilder =>
+                setup.AddPolicy("HouseRentingSystem", policyBuilder =>
                 {
                     policyBuilder
                         .WithOrigins("https://localhost:7130")

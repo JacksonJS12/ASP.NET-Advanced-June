@@ -8,6 +8,7 @@ namespace HouseRentingSystem.Web
     using Infrastructure.ModelBinders;
     using Services.Data.Interfaces;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.FileSystemGlobbing.Internal.PatternContexts;
 
     public class Program
     {
@@ -69,6 +70,14 @@ namespace HouseRentingSystem.Web
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseEndpoints(confing =>
+            {
+                confing.MapControllerRoute(
+                    name: "ProtectingUrlPattern", 
+                    pattern: "/{controller}/{action}/{id}/{information}");
+                confing.MapDefaultControllerRoute();
+                confing.MapRazorPages();
+            });
             app.MapDefaultControllerRoute();
             app.MapRazorPages();
 

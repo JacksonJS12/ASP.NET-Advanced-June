@@ -14,6 +14,6 @@
 
         Task<string?> GetAgentIdByUserIdAsync(string userId);
 
-        Task<bool> HasHouseWithIdAsync(string úsertId, string houseId);
+        Task<bool> HasHouseWithIdAsync(string? usertId, string houseId);
     }
 }
